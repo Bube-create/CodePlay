@@ -69,7 +69,54 @@ public class CodePlayApp {
         }
         
     }
-    public static int[] getUserInput (){
+	
+	public static void compSampleSpaceGenerator (int[] userMainCode, int userLevel){
+	    if (userLevel == 2){
+	        playerWants(2);
+	        for (int i = 0, j = -3; j < 4; i++, j++){
+	            compSpaceOne[i] = userMainCode[0] + j % 10;
+	            compSpaceTwo[i] = userMainCode[1] + j % 10;
+	            compSpaceThree[i] = userMainCode[2] + j % 10;
+	            compSpaceFour[i] = userMainCode[3] + j % 10;
+	        }
+	   else if (userLevel == 2){
+	        playerWants(2);
+	        for (int i = 0, j = -3; j < 3; i++, j++){
+	            compSpaceOne[i] = userMainCode[0] + j % 10;
+	            compSpaceTwo[i] = userMainCode[1] + j % 10;
+	            compSpaceThree[i] = userMainCode[2] + j % 10;
+	            compSpaceFour[i] = userMainCode[3] + j % 10;
+	        }
+	    }
+	}
+	
+	public static void playerWants (int userLevel){
+	    if (userLevel == 2){
+	        compSpaceOne = new int[7];
+	        compSpaceTwo = new int[7];
+	        compSpaceThree = new int[7];
+	        compSpaceFour = new int[7];
+	    }
+	    else if (userLevel == 2){
+	        compSpaceOne = new int[5];
+	        compSpaceTwo = new int[5];
+	        compSpaceThree = new int[5];
+	        compSpaceFour = new int[5];
+	    }
+	}
+	
+	public static int[] setCompMainCode (){
+	    Random rand = new Random();
+	    int[] compCode = new int[4];
+	    for (int i = 0; i < compCode.length; i++){
+	        compCode[i] = rand.nextInt(10);
+	    }
+	}
+	
+	
+	
+	
+   /* public static int[] getUserInput (){
         String userInput;
         Scanner input = new Scanner(System.in);
         userInput = input.next();
@@ -87,5 +134,5 @@ public class CodePlayApp {
     }
 	public static void main (String[] args) {
 		System.out.println("GfG!");
-	}
+	}*/
 }
