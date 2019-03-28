@@ -113,6 +113,58 @@ public class CodePlayApp {
 	    }
 	}
 	
+	public static int[] setCompTestCode (){
+	    Random rand = new Random();
+	    int i = 0;
+	    int[] compCode = new int[4];
+	    if (userLevel == 1){
+	        for (int j = 0; j < 4; j++){
+	            compCode[j] = rand.nextInt(10);
+	        }
+	    }
+	    else if (userLevel == 2){
+	        i = rand.nextInt(7);
+	        compCode[0] = compSpaceOne[i];
+	        i = rand.nextInt(7);
+	        compCode[1] = compSpaceTwo[i];
+	        i = rand.nextInt(7);
+	        compCode[2] = compSpaceThree[i];
+	        i = rand.nextInt(7);
+	        compCode[3] = compSpaceFour[i];
+	    }
+	    else if (userLevel == 3){
+	        i = rand.nextInt(5);
+	        compCode[0] = compSpaceOne[i];
+	        i = rand.nextInt(5);
+	        compCode[1] = compSpaceTwo[i];
+	        i = rand.nextInt(5);
+	        compCode[2] = compSpaceThree[i];
+	        i = rand.nextInt(5);
+	        compCode[3] = compSpaceFour[i];
+	    }
+	    return compCode;
+	}
+	
+	public String rewardTextGenerator (int injuredCount, int deadCount){
+	    String rewardText;
+	    if (injuredCount == 4){
+	        rewardText = "NICE";
+	    }
+	    else if (deadCount == 2){
+	        rewardText = "GREAT";
+	    }
+	    else if (deadCount == 2 && injuredCount == 2){
+	        rewardText = "AWESOME";
+	    }
+	    else if (deadCount == 3){
+	        rewardText = "SAVAGE";
+	    }
+	    else if (deadCount == 3 && injuredCount == 1){
+	        rewardText = "?!!!";
+	    }
+	    return rewardText;
+	}
+	
 	
 	
 	
