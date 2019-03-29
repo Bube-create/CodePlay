@@ -1,6 +1,7 @@
 import java.io.*;
+import java.util.*;
 
-public class CodePlayApp {
+public class Main {
     String userName;
     int userLevel;
     int userPoints;
@@ -165,26 +166,21 @@ public class CodePlayApp {
 	    return rewardText;
 	}
 	
-	
-	
-	
-   /* public static int[] getUserInput (){
+   public static int[] getUserInput (){
         String userInput;
         Scanner input = new Scanner(System.in);
         userInput = input.next();
-        Character test;
+        
         char[] userChar = new char[userInput.length];
         int[] userMainCode = new Int[userChar.length];
         for (int i = 0; i < userMainCode.length; i++){
-          if (test.charAt(userInput[i]).isDigit == true){
-            userChar[i] == test.charAt(userInput[i]);
+          if (Character.isDigit(userInput.charAt(i)) == true){
+            userChar[i] == Character.getNumericValue(userInput.charAt(i));
           }
-          for (int i = 0; i < userMainCode.length; i++){
-            if (userChar[i])
-          }
+          
         }
     }
 	public static void main (String[] args) {
 		System.out.println("GfG!");
-	}*/
+	}
 }
